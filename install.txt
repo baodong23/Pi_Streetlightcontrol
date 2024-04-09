@@ -1,0 +1,63 @@
+If you are using Raspbian, you need to install flask first:
+
+    pip3 install --upgrade python-socketio==4.6.0
+
+    pip3 install --upgrade python-engineio==3.13.2
+
+    pip3 install --upgrade Flask-SocketIO==4.3.1
+
+    pip3 install --upgrade Werkzeug==2.0.3
+
+To connect Pi and PLC, you need to install snap7:
+
+    wget https://sourceforge.net/projects/snap7/files/1.2.1/snap7-full-1.2.1.tar.gz
+    tar -zxvf snap7-full-1.2.1.tar.gz
+    cd snap7-full-1.2.1/build/unix
+    sudo make -f arm_v6_linux.mk all
+
+    #copy compiled library to your lib directories
+    sudo cp ../bin/arm_v6-linux/libsnap7.so /usr/lib/libsnap7.so
+    sudo cp ../bin/arm_v6-linux/libsnap7.so /usr/local/lib/libsnap7.so
+
+    #install python pip if you don't have it:
+    sudo apt-get install python-pip
+    sudo pip install python-snap7
+
+    You will need to edit the lib_location on common.py in the /usr/local/lib/python2.7/dist-packages/snap7/ directory
+    Add a line in the __init__ part of the Snap7Library class:
+    lib_location='/usr/local/lib/libsnap7.so'
+
+you need to install freetds driver for your connection to sqlserver:
+////////////////////////////////////////////////////////
+    sudo apt-get install unixodbc
+    sudo apt-get install unixodbc-dev
+    sudo apt-get install freetds-dev
+    sudo apt-get install tdsodbc
+    sudo apt-get install freetds-bin
+
+    sudo pip3 install pyodbc
+
+    sudo nano /etc/freetds/freetds.conf
+    Add a block like this :
+    [sqlserver]
+        host = 45.119.83.12    # Remote Sql Server's IP addr
+        port = 8183           # this is default
+        tds version = 7.0     # this is by the time i post this
+        instance = AMT_ChieuSang_App
+    /etc/odbcinst.ini
+
+    [FreeTDS]
+    Description = FreeTDS unixODBC Driver
+    Driver = /usr/lib/arm-linux-gnueabihf/odbc/libtdsodbc.so
+    Setup = /usr/lib/arm-linux-gnueabihf/odbc/libtdsodbc.so
+    UsageCount = 1
+    /etc/odbc.ini
+    [NAME1]
+    Driver = /usr/lib/arm-linux-gnueabihf/odbc/libtdsodbc.so
+    Description = MSSQL Server
+    Trace = No
+    Server = 45.119.83.12      # IP or host name of the Sql Server
+    Database = AMT_ChieuSang_App      # DataBase Name
+    Port = 8183           # This is default
+    TDS_Version = 7.0
+/////////////////////////////////////////////////
