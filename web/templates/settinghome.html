@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="/static/scripts/settinghome.js"></script>
+<div class="grid-1">
+    <div class="grid-vol mode-font">
+        <div class="font-front">
+            <label for="U1" style="color: red; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">U1max:</label>
+            <span style="color: red; font-size: 30px; margin: left 1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="U1max" value="" class="control-time" required>
+            </div>
+            <span style="color: white; float:right; font-size: 25px;">V</span>
+        </div>
+        <div class="font-front">
+            <label for="U2" style="color: yellow; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">U2max:</label>
+            <span style="color: yellow; font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="U2max" value="" class="control-time" required>
+            </div>
+        </div>
+        <div class="font-front">
+            <label for="U3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">U3max:</label>
+            <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="U3max" value="" class="control-time" required>
+            </div>
+        </div>
+    </div>
+    <div class="grid-cur mode-font">
+        <div class="font-front">
+            <label for="I1" style="color: red; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">I1max:</label>
+            <span style="color: red; font-size: 30px;margin-left: 1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="I1max" value="" class="control-time" required>
+            </div>
+            <span style="color: white; float:right; font-size: 25px;">A</span>
+        </div>
+        <div class="font-front">
+            <label for="I2" style="color: yellow; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">I2max:</label>
+            <span style="color: yellow; font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="I2max" value="" class="control-time" required>
+            </div>
+        </div>
+        <div class="font-front">
+            <label for="I3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">I3max:</label>
+            <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="I3max" value="" class="control-time" required>
+            </div>
+        </div>
+    </div>
+    <div class="grid-pow mode-font">
+        <div class="font-front">
+            <label for="W1" style="color: red; background-color: black; font-size:30px; margin-left:1%;border-radius: 5px;">W1max:</label>
+            <span style="color: red; font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="W1max" value="" class="control-time" required>
+            </div>
+            <span style="color: white; float:right; font-size: 25px;">kW</span>
+        </div>
+        <div class="font-front">
+            <label for="W2" style="color: yellow; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">W2max:</label>
+            <span style="color: yellow; font-size: 30px; margin-left: 1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="W2max" value="" class="control-time" required>
+            </div>
+        </div>
+        <div class="font-front">
+            <label for="W3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">W3max:</label>
+            <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="W3max" value="" class="control-time" required>
+            </div>
+        </div>
+    </div>
+    <div class="grid-con mode-font">
+        <div class="font-front">
+            <label for="Pf" style="color: red; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Pfmax:</label>
+            <span style="color: red; font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="Pfmax" value="" class="control-time" required>
+            </div>
+        </div>
+        <div class="font-front">
+            <label for="Ir" style="color: yellow; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Irmax:</label>
+            <span style="color: yellow; font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="Irmax" value="" class="control-time" required>
+            </div>
+            <span style="color: white; float:right; font-size: 25px;">mA</span> 
+        </div>
+        <div class="font-front">
+            <label for="Qc" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Qcmax:</label>
+            <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;"></span>
+            <div class="font-behind">
+                <input type="text" id="Qcmax" value="" class="control-time" required>
+            </div>
+            <span style="color: white; float:right; font-size: 25px;">kWh</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

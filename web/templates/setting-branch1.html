@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="/static/scripts/settingbranch1.js"></script>
+<h2 style="color: rgb(0, 225, 255);">Cài đặt thời gian vận hành nhánh 1</h2>
+<div class="grid-3">
+    <div class="set1" style="text-align: center;">
+        <div class="form-group">
+            <input type="time" id="starttime1-branch1" value="" class="control-time" required>
+            <p style="display: inline; color: orange; font-size: 25px;"> -- </p>
+            <input type="time" id="stoptime1-branch1" value="" class="control-time" required>
+        </div>
+    </div>
+    <div class="set2" style="text-align: center;">
+        <div class="form-group">
+            <label class="u">Umax:</label>
+            <input type="text" class="ui-max" id="u1-branch1max" required>
+            <label class="i">Imax:</label>
+            <input type="text" class="ui-max" id="i1-branch1max" required>
+        </div>   
+    </div>
+    <div class="set3" style="text-align: center;">
+        <div class="form-group">
+            <input type="time" id="starttime2-branch1" value="" class="control-time" required>
+            <p style="display: inline; color: orange; font-size: 25px;"> -- </p>
+            <input type="time" id="stoptime2-branch1" value="" class="control-time" required>
+        </div>
+    </div>
+    <div class="set4" style="text-align: center;">
+        <div class="form-group">
+            <label class="u">Umax:</label>
+            <input type="text" class="ui-max" id="u2-branch1max" required>
+            <label class="i">Imax:</label>
+            <input type="text" class="ui-max" id="i2-branch1max" required>
+        </div>
+    </div>
+    <div class="set5" style="text-align: center;">
+        <div class="form-group">
+            <input type="time" id="starttime3-branch1" value="" class="control-time" required>
+            <p style="display: inline; color: orange; font-size: 25px;"> -- </p>
+            <input type="time" id="stoptime3-branch1" value="" class="control-time" required>
+        </div>
+    </div>
+    <div class="set6" style="text-align: center;">
+        <div class="form-group">
+            <label class="u">Umax:</label> 
+            <input type="text" class="ui-max" id="u3-branch1max" required>
+            <label class="i">Imax:</label> 
+            <input type="text" class="ui-max" id="i3-branch1max" required>
+        </div>
+    </div>
+    <div class="set7" style="text-align: center;">
+        <div class="form-group">
+            <input type="time" id="starttime4-branch1" value="" class="control-time" required>
+            <p style="display: inline; color: orange; font-size: 25px;"> -- </p>
+            <input type="time" id="stoptime4-branch1" value="" class="control-time" required>
+        </div>
+    </div>
+    <div class="set8" style="text-align: center;">
+        <div class="form-group">
+            <label class="u">Umax:</label>
+            <input type="text" class="ui-max" id="u4-branch1max" required>
+            <label class="i">Imax:</label>
+            <input type="text" class="ui-max" id="i4-branch1max" required>
+        </div>
+    </div>
+</div>
+<a role="button" class="btn btn-delete" id="delete1" style="margin: 1%;">Xóa</a>
+<a role="button" class="btn btn-copy" id="copybranch1_2" style="margin: 1%;">Chép 2</a>
+<a role="button" class="btn btn-copy" id="copybranch1_3" style="margin: 1%;">Chép 3</a>
+<a role="button" class="btn btn-copy" id="copybranch1_4" style="margin: 1%;">Chép 4</a>
+<a role="button" class="btn btn-branch" id = "btnbranch4" href="/setting-branch4" style="float:right; margin:1%;">Nhánh 4</a>
+<a role="button" class="btn btn-branch" id = "btnbranch3" href="/setting-branch3" style="float: right; margin:1%;">Nhánh 3</a>
+<a role="button" class="btn btn-branch" id = "btnbranch2" href="/setting-branch2" style="float: right; margin:1%;">Nhánh 2</a>
+<a role="button" class="btn btn-branch btn-success" id = "btnbranch1" href="/setting-branch1" style="float: right; margin:1%;">Nhánh 1</a>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<!--<script type="module/javascript" src="/static/scripts/chart.js"></script>
+<script type="module/javascript" src="/static/scripts/src/luxon.js"></script>
+<script type="module/javascript" src="/static/scripts/chartjs-adapter-luxon.esm.js"></script>
+<script type="module/javascript" src="/static/scripts/chartjs-plugin-streaming.esm.js"></script>-->
+<script src="/static/scripts/chart.umd.js"></script>
+<script src="/static/scripts/luxon.min.js"></script>
+<script src="/static/scripts/chartjs-adapter-luxon.umd.min.js"></script>
+<script src="/static/scripts/chartjs-plugin-streaming.js"></script>
+<script src="/static/scripts/charts.js"></script>
+<div class="grid-2">
+    <div class="branch">
+        <div><canvas id="chartP2"></canvas></div>
+    </div>
+    <div class="branch1">
+        <div><canvas id="chartPf2"></canvas></div>
+    </div>
+    <div class="branch2">
+        <div><canvas id="chartU2"></canvas></div>
+    </div>
+    <div class="branch3">
+        <div><canvas id="chartI2"></canvas></div>
+    </div>
+</div>
+<a role="button" class="btn btn-branch sizeof-btn" href="/chart" style="margin:1%;">Đồ thị chung</a>
+<a role="button" class="btn btn-branch sizeof-btn" href="/branch1chart" style="margin:1%;">Nhánh 1</a>
+<a role="button" class="btn btn-branch sizeof-btn" href="/branch2chart" style="margin:1%;">Nhánh 2</a>
+<a role="button" class="btn btn-branch sizeof-btn" href="/branch3chart" style="margin:1%;">Nhánh 3</a>
+<a role="button" class="btn btn-branch sizeof-btn" href="/branch4chart" style="margin:1%;">Nhánh 4</a>
+{% endblock %}

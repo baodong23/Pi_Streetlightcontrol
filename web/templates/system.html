@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="/static/scripts/system.js"></script>
+<div class="container">
+    <div class="system-container">
+      <div class="title1">
+        <h2 style="color: aqua; text-align: center;"><b>SYSTEM LOGIN</b></h2>
+      </div>
+      <div class="user">
+        <label for="user" class="us">Username</label><br> 
+        <label for="pass" class="pa">Password</label>
+      </div>
+      <div class="input">
+        <select id="user" class="ip"></select><br>
+        <p></p>
+        <input type="password" name="password" id="pass" class="ip"required="">
+        <i class="far fa-eye-slash" id="eye"></i>
+        <i class="fas fa-user" id="person"></i>
+      </div>
+      <div class="button">
+        <button type="submit" class="btn" id="login">Login</button>
+        <button type="button" class="btn" id="logout">Logout</button>
+      </div>
+      <div class="info">
+        <p style="float: left; color: orange;">Website:www.amt.com</p>
+        <p style="float: right; color: orange">Hotline: 1800 7188</p>
+      </div>
+    </div>
+    <p></p>
+    <div class="system-container1">
+        <div class="user">
+            <label for="option" class="option">Loại PLC</label><br>
+            <label for="plcip" class="plcip">PLC IP</label><br>
+            <label for="piip" class="piip">Bộ điều khiển IP</label><br>
+            <label for="piip" class="piip">Server IP</label><br>
+            <label for="piip" class="piip">DNS</label><br>
+        </div>
+        <div class="input">
+          <label for="option" style="color: aqua;"><select id="option" class="ipop"></select></label>
+          <p></p>
+          <input type="text" class="ipop" id="plcip" required><br>
+          <p></p>
+          <input type="text" class="ipop" id="piip" required><br>
+          <p></p>
+          <input type="text" class="ipop" id="serverip" required><br>
+          <p></p>
+          <input type="text" class="ipop" id="dns" required><br>
+        </div>
+        <div class="button">
+          <button type="button" class="btn" id="connect">CONNECT</button>
+        </div>
+    </div>
+</div>
+<div id="connectplc" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p style="font-size: 30px;">Kết nối PLC thành công</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="disconnectplc" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p style="font-size: 30px;">Kết nối PLC không thành công</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="rec">Kết nối lại</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="dis">Ngắt kết nối</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="savelogout" class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p style="font-size: 20x;">Bạn có muốn đăng xuất</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="logoutok">OK</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="loginsuccess" class="modal fade" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p style="font-size: 20x;">Đăng nhập thành công</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

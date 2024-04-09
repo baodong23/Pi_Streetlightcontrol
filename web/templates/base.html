@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AMT Street Light</title>
+        <link rel="stylesheet" href="/static/content/homepage.css"/>
+        <link rel="stylesheet" href="/static/content/bootstrap.css"/>
+        <link rel="stylesheet" href="/static/content/fontawesome-free-5.15.4-web/css/all.css"/>
+        <script src="/static/scripts/jquery-2.1.4.min.js"></script>
+        <script src="/static/scripts/socket.io.js"></script>
+        <script src="/static/scripts/modernizr-2.6.2.js"></script>
+        <script src="/static/scripts/bootstrap.js"></script>
+        <script src="/static/scripts/respond.js"></script>
+        <script src="/static/scripts/bootstrap-datepicker.js"></script>
+    </head>
+    <body>
+        <div class="grid-header">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cl">
+                            <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="/"><img class="logo" src="/static/img/logo.png" id="logo"></a>
+                    </div>
+                    <div id="cl" class="navbar-collapse collapse">
+                      <ul class="nav navbar-nav">
+                        <li><a href="/control" role="button" class="space">Điều khiển</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle space" role="button"  data-toggle="dropdown" id="dropdownsetting">
+                                Cài đặt<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownsetting">
+                              <li><a class="dropdown-item" href="/settinghome" id="settinghome">Cài đặt tủ</a></li>
+                              <li><a class="dropdown-item" href="/setting-branch1" id="branch1">Nhánh 1</a></li>
+                              <li><a class="dropdown-item" href="/setting-branch2" id="branch2">Nhánh 2</a></li>
+                              <li><a class="dropdown-item" href="/setting-branch3" id="branch3">Nhánh 3</a></li>
+                              <li><a class="dropdown-item" href="/setting-branch4" id="branch4">Nhánh 4</a></li>
+                            </ul>
+                          </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle space" role="button" data-toggle="dropdown" id="dropdownchart">
+                                Giám sát<span class="caret" style="color: white !important;"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownchart">
+                                <li><a class="dropdown-item" href="/chart" id="branch1">Đồ thị chung</a></li>
+                                <li><a class="dropdown-item" href="/branch1chart" id="branch1">Nhánh 1</a></li>
+                                <li><a class="dropdown-item" href="/branch2chart" id="branch2">Nhánh 2</a></li>
+                                <li><a class="dropdown-item" href="/branch3chart" id="branch3">Nhánh 3</a></li>
+                                <li><a class="dropdown-item" href="/branch4chart" id="branch4">Nhánh 4</a></li>
+                            </ul>
+                          </li>
+                        <li><a href="/system" role="button" class="space">Hệ thống</a></li>
+                      </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p id="status" style="float: right; color: red;"><b>PLC DISCONNECT</b></p>
+            </div>
+        </div>
+        <div id="loss" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 20x;">Mất kết nối PLC</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="re">Kết  nối lại</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" id="ds">Ngắt kết nối</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="over-alarm" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 20x;">Cảnh báo: vượt quá thông số cài đặt</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="/static/scripts/lightweb.js"></script>
+    <div class="grid-1">
+        <div class="grid-info mode-font">
+            <p>
+                <label class="cl" for="ID">ID:</label>
+                <span class="cl" id="ID"></span>
+            </p>
+            <p>
+                <label class="cl" for="manage">Nhóm quản lý:</label>
+                <span class="cl" id="manage"></span>
+            </p>
+            <p>
+                <label class="cl" for="lightbranch">Nhánh đèn:</label>
+                <span class="cl" id="lightbranch"></span>
+            </p>
+            <a role="button" class="btn btn-primary" id="setup" style="font-size: 24px;">Thiết lập</a>
+        </div>
+        <div class="grid-time mode-font">
+            <div class="shell">
+                <label for="ID" class="cl">Giờ mở tủ:</label>
+                <div class="behind">
+                    <input type="time" id="starttime-home" value="" class="control-time" required>
+                </div>
+            </div>
+            <div class="shell">
+                <label for="ID" class="cl">Giờ tắt tủ:</label>
+                <div class="behind">
+                    <input type="time" id="stoptime-home" value="" class="control-time" required>
+                </div>
+            </div>
+            <div class="shell">
+                <label for="state" class="cl">Cài đặt ngày giờ:</label>
+                <div class="behind">
+                    <input type="datetime-local" id="datetime" value="" class="control-time date-width" required>
+                </div>
+            </div>
+        </div>
+        <div class="grid-vol mode-font">
+            <p><label for="U1" style="color: red; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">U1:</label>
+                <span style="color: red; font-size: 30px; margin: left 1%;" id="U1"></span>
+                <span style="color: white; float:right; font-size: 25px;">V</span>
+            </p>
+            <p><label for="U2" style="color: yellow; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">U2:</label>
+                <span style="color: yellow; font-size: 30px; margin-left:1%;" id="U2"></span>
+            </p>
+            <p><label for="U3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">U3:</label>
+                <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;" id="U3"></span>
+            </p>
+        </div>
+        <div class="grid-cur mode-font">
+            <p><label for="I1" style="color: red; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">I1:</label>
+                <span style="color: red; font-size: 30px;margin-left: 1%;" id="I1"></span>
+                <span style="color: white; float:right; font-size: 25px;">A</span>
+            </p>
+            <p><label for="I2" style="color: yellow; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">I2:</label>
+                <span style="color: yellow; font-size: 30px; margin-left:1%;" id="I2"></span>
+            </p>
+            <p><label for="I3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">I3:</label>
+                <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;" id="I3"></span>
+            </p>
+        </div>
+        <div class="grid-pow mode-font">
+            <p><label for="W1" style="color: red; background-color: black; font-size:30px; margin-left:1%;border-radius: 5px;">W1:</label>
+                <span style="color: red; font-size: 30px; margin-left:1%;" id="W1"></span>
+                <span style="color: white; float:right; font-size: 25px;">kW</span>
+            </p>
+            <p><label for="W2" style="color: yellow; background-color: black; font-size: 30px; margin-left: 1%;border-radius: 5px;">W2:</label>
+                <span style="color: yellow; font-size: 30px; margin-left: 1%;" id="W2"></span>
+            </p>
+            <p><label for="W3" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">W3:</label>
+                <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;" id="W3"></span>
+            </p>
+        </div>
+        <div class="grid-con mode-font">
+            <p><label for="Pf" style="color: red; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Pf:</label>
+                <span style="color: red; font-size: 30px; margin-left:1%;" id="Pf"></span>
+            </p>
+            <p><label for="Ir" style="color: yellow; background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Ir:</label>
+                <span style="color: yellow; font-size: 30px; margin-left:1%;" id="Ir"></span>
+                <span style="color: white; float:right; font-size: 25px;">mA</span> 
+            </p>
+            <p><label for="Qc" style="color: rgb(0, 255, 0); background-color: black; font-size: 30px; margin-left:1%;border-radius: 5px;">Qc:</label>
+                <span style="color: rgb(0, 255, 0); font-size: 30px; margin-left:1%;" id="Qc"></span>
+                <span style="color: white; float:right; font-size: 25px;">kWh</span>
+            </p>
+        </div>
+    </div>
+    <div id="set" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"><b>Thiết lập</b></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="setID">ID</label>
+                        <input type="text" class="form-control" id="setID" placeholder="Nhập ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="setmanager">Nhóm quản lý</label>
+                        <input type="text" class="form-control" id="setmanager" placeholder="Nhóm quản lý" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="setlightbranch">Nhánh đèn</label>
+                        <input type="text" class="form-control" id="setlightbranch" placeholder="Nhánh đèn" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="saveid" class="btn btn-primary" data-dismiss="modal">Lưu</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    {% endblock %}

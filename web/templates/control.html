@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="/static/scripts/lightweb.js"></script>
+<div class="grid-2">
+    <div class="branch">
+        <div class="title">
+            <p style="text-align: center;font-size: 32px;color: orange;"><b>Nhánh 1</b></p>
+        </div>
+        <div class="branch-body">
+            <div>
+                <label for="ID" class="cl">Giờ mở:</label>
+                <span id="starttime1" style="color:rgb(0, 255, 0);font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Giờ tắt:</label>
+                <span id="stoptime1" style="color:red; font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">P(W):</label>
+                <span id="P1control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">U(V):</label>
+                <span id="U1control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">I(A):</label>
+                <span id="I1control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Pf:</label>
+                <span id="Pf1control" style="font-size: 30px;"></span>
+            </div>
+        </div>
+        <div class="branch-body1">
+            <div style="text-align: center;">
+                <a role="button" id="manual1" style="color: aqua; font-size: 40px; text-decoration: none;">
+                    <i class="fas fa-hand-pointer btn-manualdis" id="m1"></i>
+                </a>
+                <i id="light1" class="far fa-lightbulb color-light"></i>
+                <button type="button" id="auto1" class="btn btn-success" style="margin-bottom: 14px; margin-left: 5%;">Auto</button>
+            </div>
+        </div>
+    </div>
+    <div class="branch1">
+        <div class="title">
+            <p style="text-align: center;font-size: 32px;color: orange;"><b>Nhánh 2</b></p>
+        </div>
+        <div class="branch-body">
+            <div>
+                <label for="ID" class="cl">Giờ mở:</label>
+                <span id="starttime2" style="color:rgb(0, 255, 0);font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Giờ tắt:</label>
+                <span id="stoptime2" style="color:red;font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">P(W):</label>
+                <span id="P2control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">U(V):</label>
+                <span id="U2control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">I(A):</label>
+                <span id="I2control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Pf:</label>
+                <span id="Pf2control" style="font-size: 30px;"></span>
+            </div>
+        </div>
+        <div class="branch-body1">
+            <div style="text-align: center;">
+                <a role="button" id="manual2" style="color: aqua; font-size: 40px; text-decoration: none;">
+                    <i class="fas fa-hand-pointer btn-manualdis" id="m2"></i>
+                </a>
+                <i id="light2" class="far fa-lightbulb color-light"></i>
+                <button type="button" id="auto2" class="btn btn-success" style="margin-bottom: 14px; margin-left: 5%;">Auto</button>
+            </div>
+        </div>
+    </div>
+    <div class="branch2">
+        <div class="title">
+            <p style="text-align: center;font-size: 32px;color:orange"><b>Nhánh 3</b></p>
+        </div>
+        <div class="branch-body">
+            <div>
+                <label for="ID" class="cl">Giờ mở:</label>
+                <span id="starttime3" style="color:rgb(0, 255, 0);font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Giờ tắt:</label>
+                <span id="stoptime3" style="color:red;font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">P(W):</label>
+                <span id="P3control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">U(V):</label>
+                <span id="U3control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">I(A):</label>
+                <span id="I3control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Pf:</label>
+                <span id="Pf3control" style="font-size: 30px;"></span>
+            </div>
+        </div>
+        <div class="branch-body1">
+            <div style="text-align: center;">
+                <a id="manual3" style="color: aqua; font-size: 40px; text-decoration: none;">
+                    <i class="fas fa-hand-pointer btn-manualdis" id="m3"></i>
+                </a>
+                <i id="light3" class="far fa-lightbulb color-light"></i>
+                <button type="button" id="auto3" class="btn btn-success" style="margin-bottom: 14px; margin-left: 5%;">Auto</button>
+            </div>
+        </div>
+    </div>
+    <div class="branch3">
+        <div class="title">
+            <p style="text-align: center;font-size: 32px;color:orange"><b>Nhánh 4</b></p>
+        </div>
+        <div class="branch-body">
+            <div>
+                <label for="ID" class="cl">Giờ mở:</label>
+                <span id="starttime4" style="color:rgb(0, 255, 0);font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Giờ tắt:</label>
+                <span id="stoptime4" style="color:red;font-size: 30px;">00:00</span>
+            </div>
+            <div>
+                <label for="ID" class="cl">P(W):</label>
+                <span id="P4control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">U(V):</label>
+                <span id="U4control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">I(A):</label>
+                <span id="I4control" style="font-size: 30px;"></span>
+            </div>
+            <div>
+                <label for="ID" class="cl">Pf:</label>
+                <span id="Pf4control" style="font-size: 30px;"></span>
+            </div>
+        </div>
+        <div class="branch-body1">
+            <div style="text-align: center;">
+                <a id="manual4" style="color: aqua; font-size: 40px; text-decoration: none;">
+                    <i class="fas fa-hand-pointer btn-manualdis" id="m4"></i>
+                </a>
+                <i id="light4" class="far fa-lightbulb color-light"></i>
+                <button type="button" id="auto4" class="btn btn-success" style="margin-bottom: 14px; margin-left: 5%;">Auto</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
